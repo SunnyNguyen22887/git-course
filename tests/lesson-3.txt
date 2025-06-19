@@ -1,0 +1,87 @@
+1. Giải thích câu lệnh
+- git commit --amend
+Câu lệnh sửa commit gần nhất (có thể sửa message commit)
+Dùng câu lệnh này cần gõ i để vào chế độ insert
+Gõ esc để thoát insert
+Gõ "wq để write và quit
+
+- git commit --amend -m"message"
+Câu lệnh này để đổi trực tiếp commit message mà không cần vào chế độ insert
+
+- git restore --staged <file>
+Đưa file chỉ định từ vùng Staging về Working Directory
+
+- git reset HEAD~1 or git reset HEAD~<số lượng commit>
+Câu lệnh đưa số lượng commit gần nhất từ vùng Repository về Working Directory
+VD các commit được đưa vào vùng Reoissitory lần lượt là C1, C2, C3
+thì câu lệnh git reset HEAD~1 sẽ đưa các file thuộc commit C3 về vùng Working Directory
+
+2. Trí tưởng tượng bay cao bay xa:
+a. 3 file: file1, file2, file3 được tạo trong folder local trên máy tính cá nhân
+
+b. git init
+Working Directory: file1, file2, file3
+Staging area:
+Repository:
+
+c. git commit -m"init project"
+Working Directory: file1, file2, file3
+Staging area:
+Repository:
+
+d. git add file1
+Working Directory: file2, file3
+Staging area: file1
+Repository:
+
+e. git commit -m"add file"
+Working Directory: file2, file3
+Staging area: 
+Repository: file1
+
+f. git add .
+Working Directory: 
+Staging area: file2, file3
+Repository: file1
+
+g. git restore --staged file2
+Working Directory: file2
+Staging area: file3
+Repository: file1
+
+h. git commit -m"add all files"
+Working Directory: file2
+Staging area: 
+Repository: file1, file3
+
+i. git reset HEAD~
+Working Directory: file2, file3
+Staging area: 
+Repository: file1 
+
+3. Continue tưởng tượng:
+a. git init: khởi tạo các thư mục được quản lý bởi git
+Working Directory: 
+Staging area: 
+Repository: 
+
+b. Tạo các file file1.txt, file2.txt, oops/file3.txt
+Working Directory: file file1.txt, file2.txt, oops/file3.txt
+Staging area: 
+Repository: 
+
+c. Thêm vào file .getignore file1.txt, oops/
+file1.txt và oops/file3.txt sẽ disable và không được bao gồm khi chạy các câu lệnh git về sau
+Working Directory:  file2.txt
+Staging area: 
+Repository: 
+
+d. git add .
+Working Directory: 
+Staging area: file2.txt 
+Repository:
+
+e. git commit -m"init project"
+Working Directory: 
+Staging area: 
+Repository: file2.txt 
