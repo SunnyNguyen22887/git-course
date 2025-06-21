@@ -12,7 +12,10 @@ Câu lệnh này để đổi trực tiếp commit message mà không cần vào
 Đưa file chỉ định từ vùng Staging về Working Directory
 
 - git reset HEAD~1 or git reset HEAD~<số lượng commit>
+
 Câu lệnh đưa số lượng commit gần nhất từ vùng Repository về Working Directory
+(huỷ bỏ commit cuối cùng và giữ lại toàn bộ thay đổi của nó trong Working Directory)
+
 VD các commit được đưa vào vùng Reoissitory lần lượt là C1, C2, C3
 thì câu lệnh git reset HEAD~1 sẽ đưa các file thuộc commit C3 về vùng Working Directory
 
@@ -72,16 +75,16 @@ Repository:
 
 c. Thêm vào file .getignore file1.txt, oops/
 file1.txt và oops/file3.txt sẽ disable và không được bao gồm khi chạy các câu lệnh git về sau
-Working Directory:  file2.txt
+Working Directory:  file2.txt, .gitignore
 Staging area: 
 Repository: 
 
 d. git add .
 Working Directory: 
-Staging area: file2.txt 
+Staging area: file2.txt , .gitignore
 Repository:
 
 e. git commit -m"init project"
 Working Directory: 
 Staging area: 
-Repository: file2.txt 
+Repository: file2.txt , .gitignore
